@@ -1,0 +1,29 @@
+<div class="container play">
+  <div class="modal">
+    <div class="question-number">
+      <p>{{`Question ${currentQuestionIndex + 1} of ${questions.length}`}}</p>
+      <p>Current score: {{ score }}</p>
+    </div>
+    <!-- Display the updated countdown -->
+    <app-circular-progress
+      [percent]="percentTime"
+      [text]="timeLeft + 's'"
+      [lessThanPercent]="50"
+    ></app-circular-progress>
+    <!-- Display the current question -->
+    <div>
+      <h3 *ngIf="questions && questions[currentQuestionIndex]" class="question">
+        {{ questions[currentQuestionIndex].question | decodeHtml }}
+      </h3>
+
+      <!-- Display the answer options -->
+      <div *ngFor="let answer of questions[currentQuestionIndex]?.all_answers">
+        <app-answer-button
+          [onClick]="answerQuestion.bind(this)"
+          [answer]="answer"
+          [correct]="correctAnswer ? answer === correctAnswer : undefined"
+        ></app-answer-button>
+      </div>
+    </div>
+  </div>
+</div>

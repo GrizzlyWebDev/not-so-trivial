@@ -1,0 +1,29 @@
+<!-- results.component.html -->
+<div class="container">
+  <div class="modal">
+    <h1 class="results-title">{{ headingText }}</h1>
+
+    <!-- Circular Progress Bar showing score -->
+    <app-circular-progress
+      text=" {{ correctAnswers }} / {{ totalQuestions }}"
+      [percent]="progress"
+      [lessThanPercent]="50"
+    >
+    </app-circular-progress>
+
+    <p class="name-prompt">Enter your name for the leaderboard!</p>
+
+    <input
+      [(ngModel)]="playerName"
+      placeholder="Enter your name"
+      type="text"
+      class="input"
+      required
+    />
+
+    <app-button
+      buttonText="Continue"
+      [onClick]="submitScore.bind(this)"
+    ></app-button>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  margin: 10px 0;
+  appearance: none;
+  background: var(--button-bg);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 18px;
+  text-align: center;
+  z-index: 0;
+}
+
+.select:focus,
+.select:focus-within,
+.select:active {
+  border: none;
+  outline: none;
+}
+
+.select:focus option {
+  background-color: #5468ff;
+}
+
+.custom-arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) scaleY(1);
+  transform-origin: center;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.custom-arrow.flipped {
+  transform: translateY(-50%) scaleY(-1);
+}
+
+.custom-arrow svg {
+  fill: var(--primary-text);
+  height: 40px;
+  width: 40px;
+}

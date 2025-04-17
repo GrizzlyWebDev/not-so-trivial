@@ -1,0 +1,88 @@
+.nav-container {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 20px;
+  z-index: 1000;
+}
+
+.menu-bg {
+  height: 100dvh;
+  width: 100dvw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--modal-bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-bg.active {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  background: var(--modal-foreground);
+  padding: 40px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.open {
+  padding: 10px;
+  width: max-content;
+}
+
+.open svg {
+  height: 25px;
+  width: 25px;
+  fill: var(--primary-text);
+}
+
+.sound-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.sound {
+  display: grid;
+  gap: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    top: 55%;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .menu {
+    padding: 40px 20px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+}

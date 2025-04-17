@@ -1,0 +1,9 @@
+<button
+  class="answer-button"
+  (click)="onClick(answer)"
+  [class.correct]="correct === true"
+  [class.incorrect]="correct === false"
+  [disabled]="correct"
+>
+  {{ answer | decodeHtml }}
+</button>

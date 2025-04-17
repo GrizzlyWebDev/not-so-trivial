@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="welcome-modal">
+    <h1>Welcome to not so trivial!</h1>
+    <p class="subheading">select your game options to begin!</p>
+    <form
+      [formGroup]="welcomeForm"
+      (ngSubmit)="onSubmit()"
+      class="welcome-form"
+    >
+      <p class="label">Number of questions</p>
+      <input
+        max="50"
+        min="10"
+        class="input"
+        [formControl]="welcomeForm.controls['numQuestions']"
+        type="number"
+      />
+      <p class="label">Question format</p>
+      <app-select
+        [options]="questionTypes"
+        [control]="welcomeForm.controls['selectedQuestionType']"
+        placeHolder="Select a question format"
+      ></app-select>
+      <p class="label">Category</p>
+      <app-select
+        [options]="categories"
+        [control]="welcomeForm.controls['selectedCategory']"
+        placeHolder="Select a category"
+      ></app-select>
+      <app-button
+        [buttonText]="'Let\'s Play!'"
+        [disabled]="!welcomeForm.controls['selectedCategory'].value"
+        [ngClass]="{
+          disabled: !welcomeForm.controls['selectedCategory'].value
+        }"
+      >
+      </app-button>
+    </form>
+  </div>
+</div>

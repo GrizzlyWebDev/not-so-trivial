@@ -1,0 +1,81 @@
+/* leaderboard.component.css */
+
+.modal.leaderboard {
+  max-width: 780px;
+  overflow-x: auto;
+}
+
+.leaderboard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.leaderboard-table {
+  width: 100%;
+  background-color: var(--modal-bg);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboard-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.leaderboard-header span {
+  padding: 10px;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--accent); /* Visible border for each row */
+}
+
+.leaderboard-row:last-child {
+  border-bottom: 1px solid var(--accent); /* Border on the last row as well */
+}
+
+.container {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-data {
+  margin: 40px 0;
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+}
+
+@media (max-width: 645px) {
+  /* Adjust layout for smaller screens */
+
+  .modal.leaderboard {
+    padding: 30px 15px;
+  }
+
+  .leaderboard-table-container {
+    overflow: auto;
+    font-size: 0.8rem;
+  }
+
+  .leaderboard-table {
+    width: max-content;
+  }
+
+  .leaderboard-header span,
+  .leaderboard-row span {
+    padding: 5px;
+  }
+}

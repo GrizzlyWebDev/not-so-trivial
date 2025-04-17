@@ -1,0 +1,43 @@
+<!-- leaderboard.component.html -->
+<div class="container">
+  <div class="modal leaderboard">
+    <h1 class="leaderboard-title">Leaderboard</h1>
+
+    <div class="leaderboard-table-container">
+      <!-- Check if there are any leaderboard entries -->
+      <div
+        *ngIf="leaderboard.length > 0; else noData"
+        class="leaderboard-table"
+      >
+        <!-- Leaderboard Header -->
+        <div class="leaderboard-header">
+          <span>Name</span>
+          <span>Score</span>
+          <span>Games Played</span>
+          <span>Average Score</span>
+          <span>Best Score</span>
+        </div>
+
+        <!-- Loop through each player in the leaderboard -->
+        <div *ngFor="let player of leaderboard" class="leaderboard-row">
+          <span>{{ player.name }}</span>
+          <span>{{ player.score }}</span>
+          <span>{{ player.totalGames }}</span>
+          <span>{{ player.averageScore | number : "1.0-0" }}</span>
+          <span>{{ player.bestScore }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display this if no data is available -->
+    <ng-template #noData>
+      <p class="no-data">No leaderboard data available.</p>
+    </ng-template>
+
+    <!-- Button to go back to the game -->
+    <app-button
+      buttonText="Play Again"
+      [onClick]="playAgain.bind(this)"
+    ></app-button>
+  </div>
+</div>

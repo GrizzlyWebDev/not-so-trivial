@@ -1,0 +1,32 @@
+.welcome-modal {
+  text-align: center;
+  background-color: var(--modal-foreground);
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.subheading {
+  margin-bottom: 60px;
+}
+
+.welcome-form {
+  width: 100%;
+  text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .subheading {
+    font-size: 0.9rem;
+  }
+
+  .welcome-modal {
+    padding: 30px 20px;
+    width: 90%;
+  }
+}
