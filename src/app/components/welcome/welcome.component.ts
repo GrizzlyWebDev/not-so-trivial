@@ -29,18 +29,18 @@ import QuestionType from '../../../interfaces/QuestionType';
 })
 export class WelcomeComponent implements OnInit {
   categories: Category[] = [];
-  questionTypes: QuestionType[] = ['multiple', 'boolean'];
+  questionTypes: QuestionType[] = ['multiple choice', 'true/false'];
   numQuestions: number = 10;
   selectedCategory: Category | undefined = undefined;
   selectedDifficulty: Difficulty = 'easy';
-  selectedQuestionType: QuestionType = 'multiple';
+  selectedQuestionType: QuestionType = 'multiple choice';
 
   welcomeForm = new FormGroup({
     numQuestions: new FormControl(10, [Validators.required]),
     selectedCategory: new FormControl<Category | undefined>(undefined, [
       Validators.required,
     ]),
-    selectedQuestionType: new FormControl<QuestionType>('multiple', [
+    selectedQuestionType: new FormControl<QuestionType>('multiple choice', [
       Validators.required,
     ]),
   });
@@ -85,7 +85,8 @@ export class WelcomeComponent implements OnInit {
       this.welcomeForm.controls['selectedCategory'].value ?? undefined
     );
     this.appService.setSelectedQuestionType(
-      this.welcomeForm.controls['selectedQuestionType'].value ?? 'multiple'
+      this.welcomeForm.controls['selectedQuestionType'].value ??
+        'multiple choice'
     );
     if (!this.selectedCategory) return;
     await this.questionsService.fetchQuestions(

@@ -21,7 +21,7 @@ export class AppService {
   numberOfQuestions = this.numberOfQuestionsSource.asObservable();
 
   private selectedQuestionTypeSource = new BehaviorSubject<QuestionType>(
-    'multiple'
+    'multiple choice'
   );
   selectedQuestionType = this.selectedQuestionTypeSource.asObservable();
 
@@ -90,7 +90,7 @@ export class AppService {
 
   setGameStatistics(playerName: string, score: number) {
     let stats = JSON.parse(localStorage.getItem('gameStats') || '{}');
-  
+
     if (!stats[playerName]) {
       stats[playerName] = {
         totalGames: 0,
@@ -99,25 +99,28 @@ export class AppService {
         bestScore: 0,
       };
     }
-  
+
     // Update stats for the player
     stats[playerName].totalGames += 1;
     stats[playerName].totalScore += score;
-    stats[playerName].averageScore = stats[playerName].totalScore / stats[playerName].totalGames;
-  
+    stats[playerName].averageScore =
+      stats[playerName].totalScore / stats[playerName].totalGames;
+
     if (!stats[playerName].bestScore || score > stats[playerName].bestScore) {
       stats[playerName].bestScore = score;
     }
-  
+
     localStorage.setItem('gameStats', JSON.stringify(stats));
   }
-  
+
   getGameStatisticsForPlayer(playerName: string) {
     const stats = JSON.parse(localStorage.getItem('gameStats') || '{}');
-    return stats[playerName] || {
-      totalGames: 0,
-      averageScore: 0,
-      bestScore: 0,
-    };
-  }  
+    return (
+      stats[playerName] || {
+        totalGames: 0,
+        averageScore: 0,
+        bestScore: 0,
+      }
+    );
+  }
 }

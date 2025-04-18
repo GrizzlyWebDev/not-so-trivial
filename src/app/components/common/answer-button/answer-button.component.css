@@ -37,4 +37,9 @@
     font-size: 16px;
     margin: 5px 0;
   }
+
+  .answer-button:hover {
+    transform: translateY(0px);
+    box-shadow: none;
+  }
 }

@@ -3,6 +3,19 @@
   <div class="modal leaderboard">
     <h1 class="leaderboard-title">Leaderboard</h1>
 
+    <!-- Filter Button with Dropdown -->
+    <div class="filter-dropdown">
+      <button class="button" (click)="toggleFilterDropdown()">Filter By</button>
+      <div *ngIf="isFilterDropdownOpen" class="dropdown-content">
+        <button (click)="applyFilter('name')">Name</button>
+        <button (click)="applyFilter('score')">Score</button>
+        <button (click)="applyFilter('totalGames')">Total Games Played</button>
+        <button (click)="applyFilter('averageScore')">Average Score</button>
+        <button (click)="applyFilter('bestScore')">Best Score</button>
+      </div>
+    </div>
+
+    <!-- Leaderboard Table -->
     <div class="leaderboard-table-container">
       <!-- Check if there are any leaderboard entries -->
       <div

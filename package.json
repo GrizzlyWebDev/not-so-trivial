@@ -1,8 +1,9 @@
 {
-  "name": "whos-who",
+  "name": "not-so-trivial",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "network": "ng serve --hmr --host 0.0.0.0",
     "start": "ng serve --hmr",
     "build": "ng build --configuration production --output-path=dist/not-so-trivial --base-href=/not-so-trivial/",
     "watch": "ng build --watch --configuration development",

@@ -1,2 +1,2 @@
-type QuestionType = 'boolean' | 'multiple';
+type QuestionType = 'true/false' | 'multiple choice';
 export default QuestionType;

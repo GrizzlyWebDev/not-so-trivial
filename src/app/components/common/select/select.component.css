@@ -25,6 +25,7 @@
   transition: box-shadow 0.15s, transform 0.15s;
   font-size: 18px;
   text-align: center;
+  text-align-last: center;
   z-index: 0;
 }
 

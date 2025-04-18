@@ -19,7 +19,18 @@ export class QuestionsService {
     selectedDifficulty: Difficulty,
     questionType: QuestionType
   ) {
-    const apiUrl = `https://opentdb.com/api.php?amount=${numQuestions}&category=${categoryId}&difficulty=${selectedDifficulty}&type=${questionType}`;
+    let type;
+    switch (questionType) {
+      case 'multiple choice':
+        type = 'multiple';
+        break;
+      case 'true/false':
+        type = 'boolean';
+        break;
+      default:
+        type = 'multiple';
+    }
+    const apiUrl = `https://opentdb.com/api.php?amount=${numQuestions}&category=${categoryId}&difficulty=${selectedDifficulty}&type=${type}`;
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
