@@ -1,8 +1,45 @@
-# WhosWho
+# Not So Trivial
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Welcome to **Not So Trivial**, a fun and interactive trivia game built with modern web technologies! This project was created collaboratively by a small team of developers passionate about creating engaging user experiences.
 
-## Development server
+---
+
+## 🚀 Features
+
+- **Dynamic Trivia Questions**: Fetch trivia categories and questions by category using the [Open Trivia Database API](https://opentdb.com/api_config.php).
+- **Interactive Gameplay**: Enjoy smooth animations and sound effects for an immersive experience.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend Framework**
+
+- **[Angular](https://angular.io/)**: A powerful framework for building dynamic, single-page applications. Angular's component-based architecture ensures scalability and maintainability.
+
+### **Trivia API**
+
+- **[Open Trivia Database](https://opentdb.com/api_config.php)**: A free API that provides trivia questions across various categories and difficulty levels. The API powers the game's dynamic question generation.
+
+### **Audio Library**
+
+- **[Howler.js](https://howlerjs.com/)**: A robust JavaScript library for managing audio playback. Howler.js is used to play background music, sound effects, and feedback sounds during gameplay.
+
+---
+
+## 🎮 How to Play
+
+1. **Start the Game**: Launch the app and select your preferred category and number of questions. The difficulty level among other settings can be found in the user menu.
+2. **Answer Questions**: Answer trivia questions before the timer runs out.
+3. **Track Your Progress**: See your score and progress dynamically update as you play.
+4. **Compete**: Challenge yourself or others to achieve the highest score!
+
+---
+
+## 🛠️ Development Setup
+
+### **Run the Development Server**
 
 To start a local development server, run:
 
@@ -10,50 +47,54 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/` in your browser. The app will automatically reload when you make changes to the source files.
 
-## Code scaffolding
+### **Code Scaffolding**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Generate new components, directives, or pipes using Angular CLI:
 
 ```bash
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+For a full list of schematics, run:
 
 ```bash
 ng generate --help
 ```
 
-## Building
+### **Build the Project**
 
-To build the project run:
+To build the project for production:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### **Run Unit Tests**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Execute unit tests with the [Karma](https://karma-runner.github.io) test runner:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🤝 Collaboration
 
-```bash
-ng e2e
-```
+This project was built collaboratively by a small team of developers. Special thanks to my teammate [Abdirahman-ai](https://github.com/Abdirahman-ai) for their contributions to the design, development, and testing of this application. Together, we tackled challenges, brainstormed ideas, and brought this project to life!
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📚 Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular CLI Documentation](https://angular.dev/tools/cli)
+- [Open Trivia Database API Documentation](https://opentdb.com/api_config.php)
+- [Howler.js Documentation](https://howlerjs.com/)
+
+---
+
+Thank you for checking out **Not So Trivial**! We hope you enjoy playing as much as we enjoyed building it. 🎉
