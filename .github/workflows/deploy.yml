@@ -19,10 +19,10 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build Angular project
-        run: npm run build -- --prod --output-path=dist/not-so-trivial --base-href "/not-so-trivial/"
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
